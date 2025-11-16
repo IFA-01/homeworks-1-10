@@ -1,6 +1,8 @@
 /**
  * @jest-environment jsdom
  */
+/*global require*/
+
 
 const fs = require('fs');
 
