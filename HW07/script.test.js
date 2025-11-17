@@ -5,6 +5,11 @@
 
 
 const fs = require('fs');
+const func = require('./script');
+
+test('just return a', () => {
+    expect(func(1)).toBe(1);
+});
 
 function initDOM() {
     document.body.innerHTML = fs.readFileSync('./index.html', 'utf-8');
@@ -12,6 +17,8 @@ function initDOM() {
     eval(scriptContent);
     document.dispatchEvent(new window.Event('DOMContentLoaded', { bubbles: true, cancelable: true }));
 }
+
+
 
 describe('Тесты для скрипта управления параграфами', () => {
     beforeEach(() => {

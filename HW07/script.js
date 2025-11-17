@@ -1,11 +1,19 @@
+/* global module */
+
+    function func(a) {
+      return a;
+      }
+    module.exports = func;
 document.addEventListener('DOMContentLoaded', function(){
 
     const input = document.getElementById('textInput');
     const button = document.getElementById('addButton');
     const block = document.querySelector('.div1');
 
+
+
     if (!input || !button || !block) {
-        console.log('Не найдены asdfaнеобходимые элементы:');
+        console.log('Не найдены необходимые элементы:');
         if (!input) console.log('- textInput');
         if (!button) console.log('- addButton');
         if (!block) console.log('- .div1');
@@ -32,8 +40,6 @@ document.addEventListener('DOMContentLoaded', function(){
     function manageParagraphs(){
         const allParagraphs = document.querySelectorAll('p')
         const maxParagraphs = 5;
-        console.log(allParagraphs.length);
-        console.log(maxParagraphs);
         if (allParagraphs.length > maxParagraphs) { allParagraphs[0].remove();}
     }
 
@@ -46,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function(){
         input.addEventListener('keydown', function(event) {
           if (event.key === 'Enter'){
             button.click();
-            console.log("nice");
           }
         })
 });
