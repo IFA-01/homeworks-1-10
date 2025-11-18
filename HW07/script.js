@@ -1,57 +1,54 @@
 /* global module */
 
-    function func(a) {
-      return a;
-      }
-    module.exports = func;
-document.addEventListener('DOMContentLoaded', function(){
+function func(a) {
+  return a;
+}
+module.exports = func;
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('textInput');
+  const button = document.getElementById('addButton');
+  const block = document.querySelector('.div1');
 
-    const input = document.getElementById('textInput');
-    const button = document.getElementById('addButton');
-    const block = document.querySelector('.div1');
+  if (!input || !button || !block) {
+    console.log('Не найдены необходимые элементы:');
+    if (!input) console.log('- textInput');
+    if (!button) console.log('- addButton');
+    if (!block) console.log('- .div1');
+    return;
+  }
 
+  function updateButtonVisibility() {
+    button.style.display = input.value.trim() ? 'block' : 'none';
+  }
 
+  function addTextBlock() {
+    const text = input.value.trim();
+    if (!text) return;
+    const listElem = document.createElement('p');
+    listElem.textContent = text;
+    block.append(listElem);
 
-    if (!input || !button || !block) {
-        console.log('Не найдены необходимые элементы:');
-        if (!input) console.log('- textInput');
-        if (!button) console.log('- addButton');
-        if (!block) console.log('- .div1');
-        return;
-      }
+    input.value = '';
+    manageParagraphs();
+    updateButtonVisibility();
+  }
 
-    function updateButtonVisibility(){ 
-        button.style.display = input.value.trim() ? 'block' : 'none';    
-      }
-
-    function addTextBlock() {
-        const text = input.value.trim();
-        if (!text) return; 
-        const listElem = document.createElement('p');
-        listElem.textContent = text;
-        block.append(listElem);
-
-        input.value = '';
-        manageParagraphs();
-        updateButtonVisibility();
+  function manageParagraphs() {
+    const allParagraphs = document.querySelectorAll('p');
+    const maxParagraphs = 5;
+    if (allParagraphs.length > maxParagraphs) {
+      allParagraphs[0].remove();
     }
+  }
 
+  updateButtonVisibility();
+  manageParagraphs();
 
-    function manageParagraphs(){
-        const allParagraphs = document.querySelectorAll('p')
-        const maxParagraphs = 5;
-        if (allParagraphs.length > maxParagraphs) { allParagraphs[0].remove();}
+  input.addEventListener('input', updateButtonVisibility);
+  button.addEventListener('click', addTextBlock);
+  input.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      button.click();
     }
-
-        updateButtonVisibility();
-        manageParagraphs();
-
-
-        input.addEventListener('input', updateButtonVisibility);
-        button.addEventListener('click', addTextBlock);
-        input.addEventListener('keydown', function(event) {
-          if (event.key === 'Enter'){
-            button.click();
-          }
-        })
+  });
 });

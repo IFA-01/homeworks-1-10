@@ -4,9 +4,13 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "jest",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "test": "jest --env=jsdom",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",
@@ -15,8 +19,11 @@
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jest": "^29.1.0",
+    "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.5.0",
-    "jest": "^25.0.0"
+    "jest": "^25.0.0",
+    "prettier": "^3.6.2"
   }
 }
