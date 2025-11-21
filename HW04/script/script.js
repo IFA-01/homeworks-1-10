@@ -9,4 +9,3 @@ let admin = Object.assign({}, user, { role: "Admin" });
 console.log(admin);
 let { name, age, role } = admin;
 console.log(name, age, role);
-s;

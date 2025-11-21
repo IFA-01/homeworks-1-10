@@ -1,4 +1,4 @@
-let a = [5, -123, 562, 34, 2 - 43, 34, 7, 32342, 345, -13344];
+let a = [5, -123, 562, 34, 243, 34, 7, 32342, 345, -13344];
 let sum = 0;
 
 a.forEach(function (el) {
@@ -25,3 +25,4 @@ let c = a.map(function (el) {
 });
 console.log(max);
 console.log(min);
+console.log(c);

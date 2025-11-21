@@ -1,6 +1,7 @@
 /**
  * @jest-environment jsdom
  */
+/* global require*/
 
 const fs = require("fs");
 const func = require("./script");
