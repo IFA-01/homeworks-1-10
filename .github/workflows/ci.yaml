@@ -1,5 +1,5 @@
 name: CI
-on: [push, pull_request]
+on: [push]
 
 jobs:
   test:
@@ -15,16 +15,27 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: npm install
+      run: 
+        - cd HW07
+        - npm install
+
       
     - name: Check formatting
-      run: npm run format:check
+      run: 
+      - cd HW07
+      - npm run format:check
       
     - name: Run linters
-      run: npm run lint
+      run: 
+      - cd HW07
+      - npm run lint
       
     - name: Run tests
-      run: npm test
+      run: 
+      - cd HW07
+      - npm test
       
     - name: Run tests with coverage
-      run: npm run test:coverage
+      run: 
+      - cd HW07
+      - npm run test:coverage

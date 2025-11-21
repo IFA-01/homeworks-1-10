@@ -11,8 +11,8 @@ test('just return a', () => {
 });
 
 function initDOM() {
-  document.body.innerHTML = fs.readFileSync('./index.html', 'utf-8');
-  const scriptContent = fs.readFileSync('./script.js', 'utf-8');
+  document.body.innerHTML = fs.readFileSync('./HW07/index.html', 'utf-8');
+  const scriptContent = fs.readFileSync('./HW07/script.js', 'utf-8');
   eval(scriptContent);
   document.dispatchEvent(
     new window.Event('DOMContentLoaded', { bubbles: true, cancelable: true })
