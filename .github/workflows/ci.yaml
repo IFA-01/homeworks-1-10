@@ -15,27 +15,16 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: 
-        - cd HW07
-        - npm install
-
+      run: npm install
       
     - name: Check formatting
-      run: 
-      - cd HW07
-      - npm run format:check
+      run: npm run format:check
       
     - name: Run linters
-      run: 
-      - cd HW07
-      - npm run lint
+      run: npm run lint
       
     - name: Run tests
-      run: 
-      - cd HW07
-      - npm test
+      run: npm test
       
     - name: Run tests with coverage
-      run: 
-      - cd HW07
-      - npm run test:coverage
+      run: npm run test:coverage
