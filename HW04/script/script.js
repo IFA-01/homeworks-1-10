@@ -1,11 +1,11 @@
 let user = {
-  name: 'john',
+  name: "john",
 };
 
-user['age'] = prompt('input age');
+user["age"] = prompt("input age");
 console.log(user);
 
-let admin = Object.assign({}, user, { role: 'Admin' });
+let admin = Object.assign({}, user, { role: "Admin" });
 console.log(admin);
 let { name, age, role } = admin;
 console.log(name, age, role);

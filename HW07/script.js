@@ -4,37 +4,37 @@ function func(a) {
   return a;
 }
 module.exports = func;
-document.addEventListener('DOMContentLoaded', function () {
-  const input = document.getElementById('textInput');
-  const button = document.getElementById('addButton');
-  const block = document.querySelector('.div1');
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("textInput");
+  const button = document.getElementById("addButton");
+  const block = document.querySelector(".div1");
 
   if (!input || !button || !block) {
-    console.log('Не найдены необходимые элементы:');
-    if (!input) console.log('- textInput');
-    if (!button) console.log('- addButton');
-    if (!block) console.log('- .div1');
+    console.log("Не найдены необходимые элементы:");
+    if (!input) console.log("- textInput");
+    if (!button) console.log("- addButton");
+    if (!block) console.log("- .div1");
     return;
   }
 
   function updateButtonVisibility() {
-    button.style.display = input.value.trim() ? 'block' : 'none';
+    button.style.display = input.value.trim() ? "block" : "none";
   }
 
   function addTextBlock() {
     const text = input.value.trim();
     if (!text) return;
-    const listElem = document.createElement('p');
+    const listElem = document.createElement("p");
     listElem.textContent = text;
     block.append(listElem);
 
-    input.value = '';
+    input.value = "";
     manageParagraphs();
     updateButtonVisibility();
   }
 
   function manageParagraphs() {
-    const allParagraphs = document.querySelectorAll('p');
+    const allParagraphs = document.querySelectorAll("p");
     const maxParagraphs = 5;
     if (allParagraphs.length > maxParagraphs) {
       allParagraphs[0].remove();
@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
   updateButtonVisibility();
   manageParagraphs();
 
-  input.addEventListener('input', updateButtonVisibility);
-  button.addEventListener('click', addTextBlock);
-  input.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
+  input.addEventListener("input", updateButtonVisibility);
+  button.addEventListener("click", addTextBlock);
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
       button.click();
     }
   });
