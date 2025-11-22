@@ -12,7 +12,7 @@ for (let i = 1; i <= 10; i++) {
   console.log(k * i);
 }
 
-let g = Number(prompt("input a number"));
+let g = Number(prompt('input a number'));
 console.log(g);
 let sum2 = 0;
 for (let i = 0; i < g + 1; i++) {

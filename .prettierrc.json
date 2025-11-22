@@ -3,10 +3,5 @@
   "singleQuote": false,
   "tabWidth": 2,
   "trailingComma": "es5",
-  "printWidth": 80,
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
-  }
+  "printWidth": 80
 }
