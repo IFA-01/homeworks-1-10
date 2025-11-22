@@ -11,9 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!input || !button || !block) {
     console.log("Не найдены необходимые элементы:");
-    if (!input) console.log("- textInput");
-    if (!button) console.log("- addButton");
-    if (!block) console.log("- .div1");
     return;
   }
 
