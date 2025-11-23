@@ -1,0 +1,27 @@
+name: CI
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '25'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Check formatting
+      run: npm run format:check
+      
+    - name: Run linters
+      run: npm run lint
+  
+    - name: Run tests with coverage
+      run: npm run test:coverage
